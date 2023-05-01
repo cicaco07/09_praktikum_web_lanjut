@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MahasiswaMatkulController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::resource('mahasiswa', MahasiswaController::class);
+
+Route::get('mahasiswa/nilai/{nim}', [MahasiswaController::class, 'khs']);

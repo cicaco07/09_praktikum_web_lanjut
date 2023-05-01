@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\DB;
 use App\Models\Kelas;
+use App\Models\Mahasiswa_MataKuliah;
+use App\Models\MataKuliah;
 
 class MahasiswaController extends Controller
 {
@@ -96,6 +98,12 @@ class MahasiswaController extends Controller
         return view('mahasiswa.detail', compact('Mahasiswa'));
     }
 
+    public function khs($nim)
+    {
+        $Mahasiswa = Mahasiswa::find($nim);
+        return view('mahasiswa.khs', compact('Mahasiswa'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      */
@@ -154,4 +162,5 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')
             ->with('success', 'Mahasiswa Berhasil Dihapus');
     }
+    
 }
