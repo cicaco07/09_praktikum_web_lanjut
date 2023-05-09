@@ -25,6 +25,7 @@ class Mahasiswa extends Model
         'nim',
         'nama',
         'tanggal_lahir',
+        'foto_mhs',
         'email',
         'kelas_id',
         'jurusan',
